@@ -2,18 +2,18 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "sample" {
+resource "aws_instance" "samples" {
   ami           = "ami-077fb3e62ddf0fa9a"
   instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow_sample.id, "sg-0c55b11a7ec4157c0"]
+  vpc_security_group_ids = [aws_security_group.allow_samples.id, "sg-0c55b11a7ec4157c0"]
 
   tags = {
-    Name = "sample"
+    Name = "samples"
   }
 }
 
-resource "aws_security_group" "allow_sample" {
-  name        = "allow_sample"
+resource "aws_security_group" "allow_samples" {
+  name        = "allow_tls"
   description = "Allow samples traffic"
 
   ingress = [
@@ -38,6 +38,8 @@ resource "aws_security_group" "allow_sample" {
   ]
 
   tags = {
-    Name = "allow_sample"
+    Name = "allow_samples"
   }
 }
+
+
