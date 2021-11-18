@@ -1,15 +1,14 @@
-output "abc0" {
+output "abcc" {
  value = "hello/nworld"
 }
-output "abcc" {
+output "abc" {
   value = "hello"
 }
-
 variable "abc" {
   default = "100"
 }
 output "abc" {
-  value = "var.abc"
+  value = "var.abc
 }
 variable "abc1" {
   default = 100
